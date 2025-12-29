@@ -1,7 +1,7 @@
 from typing import List
 
-from . import leads
-from . import utils
+import leads
+import utils
 
 
 ORIGENES = ["web", "whatsapp", "referido"]

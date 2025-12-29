@@ -1,7 +1,7 @@
 from typing import Dict, List, Optional
 from datetime import datetime
 
-from .storage import load_leads, save_leads
+from storage import load_leads, save_leads
 
 
 def _now_iso() -> str:
@@ -11,7 +11,7 @@ def _now_iso() -> str:
 def add_lead(lead: Dict) -> Dict:
 	leads = load_leads()
 	lead = lead.copy()
-	# assign a unique id
+	# asignar un unico id
 	max_id = max((l.get("id", 0) for l in leads), default=0)
 	lead.setdefault("id", max_id + 1)
 	lead.setdefault("created_at", _now_iso())
